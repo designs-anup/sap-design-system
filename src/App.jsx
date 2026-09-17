@@ -1,34 +1,33 @@
 import { ThemeProvider } from '@ui5/webcomponents-react/ThemeProvider';
-import { Button } from '@ui5/webcomponents-react/Button';
+import { ShellBar } from '@ui5/webcomponents-react/ShellBar';
 import { Card } from '@ui5/webcomponents-react/Card';
 import { Text } from '@ui5/webcomponents-react/Text';
-import { Bar } from '@ui5/webcomponents-react/Bar';
-import { Title } from '@ui5/webcomponents-react/Title';
+import { Button } from '@ui5/webcomponents-react/Button';
 
 function App() {
   return (
     <ThemeProvider>
-      {/* Fiori Shell Bar Header */}
-      <Bar 
-        design="Header" 
-        endContent={
-          <Button design="Transparent" icon="settings" />
+      {/* Official Fiori ShellBar */}
+      <ShellBar
+        primaryTitle="My SAP Fiori App"
+        profile={
+          <Button design="Transparent">Anup Sahoo</Button>
         }
-      >
-        <Title level="H3">My SAP Fiori App</Title>
-      </Bar>
+      />
 
-      {/* Main Content Area */}
-      <div style={{ padding: '2rem' }}>
-        <Card style={{ width: '350px', padding: '1rem' }}>
-          <Text style={{ marginBottom: '1rem', display: 'block' }}>
-            Welcome! Your React + Vite environment is now wired up with the SAP Design System.
+      {/* Main Content Container */}
+      <div style={{ padding: '2rem', display: 'flex', justifyContent: 'center' }}>
+        <Card 
+          style={{ width: '400px', padding: '1.5rem', textAlign: 'center' }}
+        >
+          <Text style={{ marginBottom: '1.5rem', display: 'block' }}>
+            Success! Your React app is now styled with the official SAP Horizon design system.
           </Text>
           <Button 
             design="Emphasized" 
-            onClick={() => alert('SAP Fiori theme active!')}
+            onClick={() => alert('SAP Fiori Design System is ready!')}
           >
-            Click Me
+            Explore Components
           </Button>
         </Card>
       </div>
